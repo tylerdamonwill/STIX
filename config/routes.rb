@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-   resources :customers
-   root 'customers#index'
+  root 'application#hello'
+   #resources :customers
+   #root 'customers#index'
 end
