@@ -1,59 +1,379 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STIX | Home</title>
+    	<script>
+    $(document).ready(function () {
+          // Hide the div
+          $("#div1").hide();
+          // Show the div after 5s
+          $("#div1").delay(4000).fadeIn(1000);
+          
+          $("#div2").delay(3000).fadeOut(1000);
+      }); 	
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
+	</script>
+	    <style>
+  body{
+    background-color: black;
+  }
+  
+ .body1 {
+  background-color: black;
+  position: absolute;
+  top: 20%;
+  margin-left: -50px;
+  left: 10%;
+  animation: speeder .4s linear infinite;
+}
+  span {
+    height: 10px;
+    width: 80px;
+    background: #adadad;
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    border-radius: 2px 2px 2px 2px;
+  }
+  
+  .base {
+  span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-right: 100px solid #000;
+    border-bottom: 6px solid transparent;
 
-<p>
-  <strong>Location:</strong>
-  <%= @customer.location %>
-</p>
+    &:before {
+      content: "";
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #000;
+      position: absolute;
+      right: -110px;
+      top: -16px;
+    }
 
-<p>
-  <strong>Item1:</strong>
-  <%= @customer.item1 %>
-</p>
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 0 solid transparent;
+      border-right: 55px solid #000;
+      border-bottom: 16px solid transparent;
+      top: -16px;
+      right: -98px;
+    }
+  }
+}
 
-<p>
-  <strong>Item2:</strong>
-  <%= @customer.item2 %>
-</p>
+.face {
+  position: absolute;
+  height: 12px;
+  width: 20px;
+  background: #000;
+  border-radius: 20px 20px 0 0;
+  transform: rotate(-40deg);
+  right: -125px;
+  top: -15px;
 
-<p>
-  <strong>Item3:</strong>
-  <%= @customer.item3 %>
-</p>
+  &:after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    background: #000;
+    right: 4px;
+    top: 7px;
+    position: absolute;
+    transform: rotate(40deg);
+    transform-origin: 50% 50%;
+    border-radius: 0 0 0 2px;
+  }
+}
 
-<p>
-  <strong>Item4:</strong>
-  <%= @customer.item4 %>
-</p>
+.body1 > span > span:nth-child(1),
+.body1 > span > span:nth-child(2),
+.body1 > span > span:nth-child(3),
+.body1 > span > span:nth-child(4) {
+  width: 100px;
+  height: 5px;
+  background: #adadad;
+  position: absolute;
+  animation: fazer1 .2s linear infinite;
+}
 
-<p>
-  <strong>Topping1:</strong>
-  <%= @customer.topping1 %>
-</p>
+.body1 > span > span:nth-child(2) {
+  background: orange;
+  top: 100px;
+  animation: fazer2 .4s linear infinite;
+}
 
-<p>
-  <strong>Topping2:</strong>
-  <%= @customer.topping2 %>
-</p>
+.body1 > span > span:nth-child(3) {
+  background: red;
+  top: 110px;
+  animation: fazer3 .4s linear infinite;
+  animation-delay: -1s;
+}
 
-<p>
-  <strong>Payment type:</strong>
-  <%= @customer.payment_type %>
-</p>
+.body1 > span > span:nth-child(4) {
+  background: orange;
+  top: 115px;
+  animation: fazer4 1s linear infinite;
+  animation-delay: -1s;
+}
 
-<p>
-  <strong>Room number:</strong>
-  <%= @customer.room_number %>
-</p>
+@keyframes fazer1 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -80px;
+    opacity: 0;
+  }
+}
 
-<p>
-  <strong>Total:</strong>
-  <%= @customer.total %>
-</p>
+@keyframes fazer2 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100px;
+    opacity: 0;
+  }
+}
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+@keyframes fazer3 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -50px;
+    opacity: 0;
+  }
+}
+
+@keyframes fazer4 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -150px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes speeder {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -3px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 3px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-1px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-2px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.longfazers {
+  position: absolute;
+  width: 100%;
+  height: 100%;}
+
+  .span1 {
+    position: absolute;
+    height: 2px;
+    width: 20%;
+    background: #000;}
+
+    .span1:nth-child(1) {
+      background-color: white;
+      top: 5%;
+      animation: lf .6s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .span1:nth-child(2) {
+      background-color: white;
+      top: 10%;
+      animation: lf2 .8s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .span1:nth-child(3) {
+      background-color: white;
+      top: 55%;
+      animation: lf3 .6s linear infinite;
+    }
+
+    .span1:nth-child(4) {
+      background-color: white;
+      top: 6%;
+      animation: lf4 .5s linear infinite;
+      animation-delay: -3s;
+    }
+
+
+@keyframes lf {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -200%;
+    opacity: 0;
+  }
+}
+@keyframes lf2 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -200%;
+    opacity: 0;
+  }
+}
+@keyframes lf3 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+@keyframes lf4 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+    </style>
+	<link rel="stylesheet" href="/app/assets/stylesheets/application.css">
+</head>
+<div id="div1" >
+<body style="background-color: #adadad;">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href=""></a>
+  <a href="/static_pages/loading">Menu</a>
+  <a href="/static_pages/loadingorder">Order</a>
+</div>
+<div id="main">
+    <script>
+    function openNav() {
+    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("main").style.marginRight = "250px";
+	}
+
+	function closeNav() {
+   		document.getElementById("mySidenav").style.width = "0";
+    	document.getElementById("main").style.marginRight= "0";
+	} 
+	</script>
+  <header class="header">
+  <p class="alignright"><strong style="font-size:100px;cursor:pointer;" onclick="openNav()">&#9776;</strong></p>
+  <p class="alignleft"><a href="/"><%= image_tag("STIXREAL1.png", size: "390x120", alt: "stix") %></a></p>
+  <p class="total">Total: <%= @customer.total %></p>
+  <div style="clear: both;"></div>
+  </header>
+  <div class="tabbody">
+  <h1><%= @customer.name%>'s Order</h1>
+
+  <h2 id="loc"><%= @customer.location %></h2>
+
+  <h2><%= @customer.room_number %></h2>
+
+  <h2 id="order1"><%= @customer.item1 %></h2>
+
+  <h2 id="order2"><%= @customer.item2 %></h2>
+  
+  <h2 id="order3"><%= @customer.item3 %></h2>
+  
+  <h2 id="order4"><%= @customer.item4 %></h2>
+
+  <h2 id="top1"> <%= @customer.topping1 %></h2>
+  
+  <h2 id="top2"><%= @customer.topping2 %></h2>
+  
+  <h2><%= @customer.payment_type %></h2>
+  
+  <br></br>
+  <br></br>
+  <%= link_to 'Edit', edit_customer_path(@customer), style: 'color:white;', class: 'button1' %>
+  <br></br>
+  <br></br>
+
+</div>
+ <footer>
+    <p style="text-align:center;">
+       <a href="/"><%= image_tag("snapcode.png", size: "120x120", alt: "SnapChat") %></a>
+       <a href="https://www.facebook.com/gcwafflesticks/"><%= image_tag("Facebook.png", size: "120x120", alt: "Facebook") %></a>
+       <a href="tel:+12257161681"><%= image_tag("phone.png", size: "120x120", alt: "Phone") %></a>
+       <a href="mailto:gcwafflestix@gmail.com?Subject=Contact STIX"><%= image_tag("eMail.png", size: "120x120", alt: "eMail") %></a></p>
+    </footer>
+</div>
+</body>
+</div>
+<div id="div2" style="background-image: url('/assets/gback.jpg');background-repeat: no-repeat;background-size: 100% 500px;">
+    <body>
+    <div class='body1'>
+  <span>
+      <%= image_tag("STIXbig.png", size: "891x310", alt: "stix") %>
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</div>
+<div class='longfazers'>
+  <span class="span1"></span>
+  <span class="span1"></span>
+  <span class="span1"></span>
+  <span class="span1"></span>
+</div>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+</body>
+    </div>
+</html>

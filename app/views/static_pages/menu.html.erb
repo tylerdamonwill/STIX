@@ -1,2 +1,126 @@
-<h1>StaticPages#menu</h1>
-<p>Find me in app/views/static_pages/menu.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STIX | Menu</title>
+    	<script>
+	function openNav() {
+    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("main").style.marginRight = "250px";
+	}
+
+	function closeNav() {
+   		document.getElementById("mySidenav").style.width = "0";
+    	document.getElementById("main").style.marginRight= "0";
+	} 
+	</script>
+	<link rel="stylesheet" href="/app/assets/stylesheets/application.css">
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href=""></a>
+  <a href="/static_pages/loadinghome">Home</a>
+  <a href="/static_pages/loadingorder">Order</a>
+</div>
+<div id="main">
+  <header class="header">
+  <p class="alignright"><span style="font-size:100px;cursor:pointer" onclick="openNav()">&#9776;</span></p>
+  <p class="alignleft"><a href="/"><%= image_tag("STIXREAL1.png", size: "390x120", alt: "stix") %></a></p>
+  <div style="clear: both;"></div>
+  </header>
+  <br></br>
+  <div class="tabbody">
+  <table>
+  <tr>
+    <th>Regular Waffles</th>
+    <th>Price</th> 
+  </tr>
+  <tr>
+    <td>Cinnamon Roll Waffle</td>
+    <td>$3.00</td>
+  </tr>
+  <tr>
+    <td>Buttermilk Waffle</td>
+    <td>$3.00</td>
+  </tr>
+  <tr>
+    <td>Chocolate Chip Waffle</td>
+    <td>$3.00</td>
+  </tr>
+  <tr>
+    <th>Beignets</th>
+    <th></th> 
+  </tr>
+  <tr>
+    <td>Small Beignet Stix</td>
+    <td>$3.00</td>
+  </tr>
+  <tr>
+    <td>Large Beignet Stix</td>
+    <td>$5.00</td>
+  </tr>
+  <tr>
+    <th>Specialty Waffles</th>
+    <th></th> 
+  </tr>
+  <tr>
+    <td>Chocolate Chip Burrito</td>
+    <td>$4.00</td>
+  </tr>
+  <tr>
+    <td>Deluxe Chocolate Chip Burrito</td>
+    <td>$5.00</td>
+  </tr>
+  <tr>
+    <th>Sides</th>
+    <th></th> 
+  </tr>
+  <tr>
+    <td>Strawberries and Nutella</td>
+    <td>$1.00</td>
+  </tr>
+  <tr>
+    <td>Orange Juice</td>
+    <td>$1.00</td>
+  </tr>
+  <tr>
+    <td>Bottled Water</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <th>Toppings</th>
+    <th></th> 
+  </tr>
+  <tr>
+    <td>Strawberries</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <td>Nutella</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <td>Whipped Cream</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <td>Glaze</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <th style="color:red;">Deliveries</th>
+    <th style="color:red;">$2.00</th> 
+  </tr>
+  </table>
+  </div>
+<footer>
+    <p style="text-align:center;">
+       <a href="/"><%= image_tag("snapcode.png", size: "120x120", alt: "SnapChat") %></a>
+       <a href="https://www.facebook.com/gcwafflesticks/"><%= image_tag("Facebook.png", size: "120x120", alt: "Facebook") %></a>
+       <a href="tel:+12257161681"><%= image_tag("phone.png", size: "120x120", alt: "Phone") %></a>
+       <a href="mailto:gcwafflestix@gmail.com?Subject=Contact STIX"><%= image_tag("eMail.png", size: "120x120", alt: "eMail") %></a></p>
+    </footer>
+</div>
+</body>
+</html>
+

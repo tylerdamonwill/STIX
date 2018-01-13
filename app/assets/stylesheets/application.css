@@ -13,3 +13,326 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .field {
+     font-size: 25;
+     font-weight: bolder;
+     padding-bottom: 0px;
+     padding-top: 0px;
+ }
+ 
+ header { 
+    background-color:#111;
+    color:white;
+    text-align: center;
+    position:fixed;
+    top: 0;
+    left:0;
+    right:0;
+    width:100%;
+}
+
+
+
+footer { 
+    background-color:#111;
+    color:red;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+}
+
+.alignleft {
+	float: left;
+	padding-left: 15px;
+}
+
+.alignright {
+	float: right;
+	padding-right: 30px;
+	padding-top: 50px;
+}
+
+html { overflow-y: scroll; }
+
+div.fixed {
+    position: fixed;
+    bottom: 0;
+    left: calc(50% - 200px);
+}
+
+a:hover {
+    background-color: #111;
+}
+
+body{
+    font-family: "Baskerville", sans-serif;
+    background-color: #adadad;
+    color:white;
+    font-size: 30px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 120px;
+    padding-bottom: 10px;
+}
+
+
+ h1{
+    font-size: 70px;
+    border: 10px solid red;
+    background-color: red;
+    padding-top: 14px;
+    padding-bottom: 14px;
+ }
+ 
+ h2 {
+    font-size: 60px;
+    border: 3px solid #adadad;
+    border-bottom-color: grey;
+    padding-bottom: 14px;
+ }
+
+/*Side Nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    text-decoration: none;
+    font-size: 60px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 100px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-right .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Form */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  font-size: 100px;
+  z-index: 1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  font-size: 165%;
+  z-index: 1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  font-size: 165%;
+  z-index: 1;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+  font-size: 165%;
+  z-index: 1;
+}
+
+input[type=text]{
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+    border: 10px solid #adadad;
+    border-bottom-color: #b67d2f;
+    background-color: #adadad;
+    display: inline-block;
+    padding: 0px 0px 0px 10px;
+    color: white;
+    font-size: 100px;
+    font-weight: bolder;
+    font-family: "Baskerville", sans-serif;
+    /* reset */
+
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=text]:focus {
+    border-bottom-color: red;
+    outline: none;
+}
+
+
+
+select {
+    text-overflow: ellipsis; 
+    color: white;
+    width: 100%;
+    height: 200px;
+    background-color: #adadad;
+    border: 10px solid #adadad;
+    border-bottom-color: #b67d2f;
+    display: inline-block;
+    font-size: 265%;
+    padding: 0px 0px 0px 10px;
+    margin: 0px;
+    font-weight: bolder;
+    font-family: "Baskerville", sans-serif;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+
+  /* reset */
+
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+    select:hover{
+      border-bottom-color: red;
+      outline: none;
+    }
+    
+.button1 {
+    width: 100%;
+    background-color: red;
+    -webkit-appearance: none;
+    padding: 10px 40px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 200%;
+    font-weight: bolder;
+    font-family: "Baskerville", sans-serif;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #ff0000;
+}
+
+input[type=submit] {
+    height: 200px;
+    width: 100%;
+    background-color: red;
+    -webkit-appearance: none;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 400%;
+    font-weight: bolder;
+    font-family: "Baskerville", sans-serif;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #ff0000;
+}
+
+.formdiv {
+	color: black;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    padding: 20px;
+}
+
+/* table */
+.tabbody{
+    padding-bottom:140px;
+}
+table {
+    border: none;
+    width:100%;
+    color: #000000;
+}
+table, th, td, tr{
+    border: none;
+    border-collapse: collapse;
+    padding: 5px;
+}
+th, td {
+    padding: 20px;
+    text-align: left;
+}
+th {
+    background-color: #000000;
+    color: white;
+    font-size:40px;
+    font-weight: bolder;
+}
+
+td {
+    font-family: "Baskerville", sans-serif;
+    font-size:40px;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+tr:nth-child(odd) {
+   background-color:#fff;
+}
+
+tr:hover{
+	background-color: #b67d2f;
+}
+
+.total{
+    z-index: 1;
+    font-weight: bolder;
+    float: center;
+    color:red;
+    font-size: 80px;
+    font-family: "Baskerville", sans-serif;
+}

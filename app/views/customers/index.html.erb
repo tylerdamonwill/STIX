@@ -1,21 +1,74 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STIX | Home</title>
+    	<script>
+	function openNav() {
+    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("main").style.marginRight = "250px";
+	}
 
-<h1>Listing Customers</h1>
+	function closeNav() {
+   		document.getElementById("mySidenav").style.width = "0";
+    	document.getElementById("main").style.marginRight= "0";
+	} 
+	</script>
+	<link rel="stylesheet" href="/app/assets/stylesheets/application.css">
+	
+	<style>
+	tr{
+	height: 100px;
+	}
+	
+	th {
+    background-color: #000000;
+    color: white;
+    font-size:60px;
+    font-weight: bolder;
+    padding: 20px;
+    }
 
+    td {
+    font-family: "Baskerville", sans-serif;
+    font-size:60px;
+    padding: 20px;
+    line-height: 84%;
+    } 
+    
+    </style>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href=""></a>
+  <a href="/static_pages/loadinghome">Home</a>
+  <a href="static_pages/loading">Menu</a>
+  <a href="static_pages/loadingorder">Order</a>
+</div>
+<div id="main">
+  <header class="header">
+  <p class="alignright"><span style="font-size:100px;cursor:pointer" onclick="openNav()">&#9776;</span></p>
+  <p class="alignleft"><a href="/"><%= image_tag("STIXREAL1.png", size: "390x120", alt: "stix") %></a></p>
+  <div style="clear: both;"></div>
+  </header>
+  <div class="tabbody">
+<h1>Customer Listing</h1>
+
+<div style="overflow-x:auto;width:100%;word-wrap:break-word;">
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Location</th>
-      <th>Item1</th>
-      <th>Item2</th>
-      <th>Item3</th>
-      <th>Item4</th>
-      <th>Topping1</th>
-      <th>Topping2</th>
-      <th>Payment type</th>
-      <th>Room number</th>
-      <th>Total</th>
+      <th>Room</th>
+      <th>Item</th>
+      <th>Item</th>
+      <th>Item</th>
+      <th>Item</th>
+      <th>Topping</th>
+      <th>Topping</th>
+      <th>Payment</th>
+      <th>Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,6 +78,7 @@
       <tr>
         <td><%= customer.name %></td>
         <td><%= customer.location %></td>
+        <td><%= customer.room_number %></td>
         <td><%= customer.item1 %></td>
         <td><%= customer.item2 %></td>
         <td><%= customer.item3 %></td>
@@ -32,16 +86,25 @@
         <td><%= customer.topping1 %></td>
         <td><%= customer.topping2 %></td>
         <td><%= customer.payment_type %></td>
-        <td><%= customer.room_number %></td>
-        <td><%= customer.total %></td>
-        <td><%= link_to 'Show', customer %></td>
+        <td style="color:red;"><%= customer.total %></td>
+<!--    <td><%= link_to 'Show', customer %></td> -->
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
-
-<%= link_to 'New Customer', new_customer_path %>
+  </div>
+    <footer>
+    <p style="text-align:center;">
+       <a href="/"><%= image_tag("snapcode.png", size: "120x120", alt: "SnapChat") %></a>
+       <a href="https://www.facebook.com/gcwafflesticks/"><%= image_tag("Facebook.png", size: "120x120", alt: "Facebook") %></a>
+       <a href="tel:+12257161681"><%= image_tag("phone.png", size: "120x120", alt: "Phone") %></a>
+       <a href="mailto:gcwafflestix@gmail.com?Subject=Contact STIX"><%= image_tag("eMail.png", size: "120x120", alt: "eMail") %></a></p>
+    </footer>
+</div>
+</body>
+</html>

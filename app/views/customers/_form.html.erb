@@ -1,3 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STIX | Home</title>
+  <script>
+	function calcTotal() {
+	  var price = 0;
+    var order1 = document.getElementById("customer_order1").value;
+    var order2 = document.getElementById("customer_order3").value;
+    var order3 = document.getElementById("customer_order2").value;
+    var order4 = document.getElementById("customer_topping3").value;
+    var top1 = document.getElementById("customer_topping1").value;
+    var top2 = document.getElementById("customer_topping2").value;
+    var loc = document.getElementById("customer_location").value;
+    
+    if(loc != "In House"){
+      price+= 2;
+    }
+
+    if(order1 == ""){
+    	price += 0;
+    } else if(order1 == "Deluxe Chocolate Chip Burrito" || order1 == "Large Beignet Stix"){
+    	price += 5;
+    } else if (order1 == "Chocolate Chip Burrito"){
+        price += 4;
+    } else if (order1 == "Strawberries and Nutella" || order1 == "Orange Juice"){
+        price += 1;
+    } else if (order1 == "Bottled Water"){
+        price += .5;
+    } else {
+    	price += 3;
+    }
+
+    if(order2 == ""){
+    	price += 0;
+    } else if(order2 == "Deluxe Chocolate Chip Burrito" || order2 == "Large Beignet Stix"){
+    	price += 5;
+    } else if (order2 == "Chocolate Chip Burrito"){
+        price += 4;
+    } else if (order2 == "Strawberries and Nutella" || order2 == "Orange Juice"){
+        price += 1;
+    } else if (order2 == "Bottled Water"){
+        price += .5;
+    } else {
+    	price += 3;
+    }
+    
+    if(order3 == ""){
+    	price += 0;
+    } else if(order3 == "Deluxe Chocolate Chip Burrito" || order3 == "Large Beignet Stix"){
+    	price += 5;
+    } else if (order3 == "Chocolate Chip Burrito"){
+        price += 4;
+    } else if (order3 == "Strawberries and Nutella" || order3 == "Orange Juice"){
+        price += 1;
+    } else if (order3 == "Bottled Water"){
+        price += .5;
+    } else {
+    	price += 3;
+    }
+    
+    if(order4 == ""){
+    	price += 0;
+    } else if(order4 == "Deluxe Chocolate Chip Burrito" || order4 == "Large Beignet Stix"){
+    	price += 5;
+    } else if (order4 == "Chocolate Chip Burrito"){
+        price += 4;
+    } else if (order4 == "Strawberries and Nutella" || order4 == "Orange Juice"){
+        price += 1;
+    } else if (order4 == "Bottled Water"){
+        price += .5;
+    } else {
+    	price += 3;
+    }
+    
+    if(top1 == ""){
+    	price += 0;
+    } else {
+    	price += .5;
+    }
+    
+    if(top2 == ""){
+    	price += 0;
+    } else {
+    	price += .5;
+    }
+
+
+     document.getElementById("price").innerHTML = "TOTAL $" + price;
+     document.getElementById("price1").value = "$" + price;
+	}
+     
+	function openNav() {
+    	document.getElementById("mySidenav").style.width = "250px";
+    	document.getElementById("main").style.marginRight = "250px";
+	}
+
+	function closeNav() {
+   		document.getElementById("mySidenav").style.width = "0";
+    	document.getElementById("main").style.marginRight= "0";
+	} 
+	</script>
+	<link rel="stylesheet" href="/app/assets/stylesheets/application.css">
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href=""></a>
+  <a href="/static_pages/loadinghome">Home</a>
+  <a href="/static_pages/loading">Menu</a>
+  <a href="/customers">Admin</a>
+</div>
+<div id="main">
+  <header class="header">
+  <p class="alignright"><span style="font-size:100px;cursor:pointer" onclick="openNav()">&#9776;</span></p>
+  <p class="alignleft"><a href="/"><%= image_tag("STIXREAL1.png", size: "390x120", alt: "stix") %></a></p>
+  <p class="total" id="price">TOTAL $0</p>
+  <div style="clear: both;"></div>
+  </header>
+  <div class="tabbody">
 <%= form_for(@customer) do |f| %>
   <% if @customer.errors.any? %>
     <div id="error_explanation">
@@ -10,52 +130,156 @@
       </ul>
     </div>
   <% end %>
+  
 
+<span id="option-container" style="visibility: hidden; position:absolute;"></span>
+<br><br>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Name"%>
   </div>
+  
+  
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <select id="customer_location" name="customer[location]" onchange="calcTotal()">
+        <option value="">Location</option>
+        <option value="Younker">Younker Hall</option>
+        <option value="Smith">Smith Hall</option>
+        <option value="Langan">Langan Hall</option>
+        <option value="Rawson">Rawson Hall</option>
+        <option value="Gates">Gates Hall</option>
+        <option value="Clark">Clark Hall</option>
+        <option value="Cowles">Cowles Hall</option>
+        <option value="Dibble">Dibble Hall</option>
+        <option value="Norris">Norris Hall</option>
+        <option value="Loose">Loose Hall</option>
+        <option value="Read">Read Hall</option>
+        <option value="Haines">Haines Hall</option>
+        <option value="James">James Hall</option>
+        <option value="Cleveland">Cleveland Hall</option>
+        <option value="Main">Main Hall</option>
+        <option value="Lazier">Lazier Hall</option>
+        <option value="Kershaw">Kershaw Hall</option>
+        <option value="Rose">Rose Hall</option>
+        <option value="Rathje">Rathje Hall</option>
+        <option value="Off Campus">Off Campus</option>
+        <option value="In House">In House</option>
+      </select>
   </div>
+  
   <div class="field">
-    <%= f.label :item1 %><br>
-    <%= f.text_field :item1 %>
+    <%= f.text_field :room_number, placeholder: "Room"%>
   </div>
+
+ <div class="field"> 
+<select id="customer_order1" name="customer[item1]" onchange="calcTotal()">
+  <option value="">Item</option>
+  <option value="Cinnamon Roll Waffle">Cinnamon Roll Waffle</option>
+  <option value="Buttermilk Waffle">Buttermilk Waffle</option>
+  <option value="Chocolate Chip Waffle">Chocolate Chip Waffle</option>
+  <option value="Small Beignet Stix">Small Beignet Stix</option>
+  <option value="Large Beignet Stix">Large Beignet Stix</option>
+  <option value="Chocolate Chip Burrito">Chocolate Chip Burrito</option>
+  <option value="Deluxe Chocolate Chip Burrito">Deluxe Chocolate Chip Burrito</option>
+  <option value="Strawberries and Nutella">Strawberries and Nutella</option>
+  <option value="Orange Juice">Orange Juice</option>
+  <option value="Bottled Water">Bottled Water</option>
+</select>
+</div>
+
+ <div class="field">
+<select id="customer_order3" name="customer[item2]" onchange="calcTotal()">
+  <option value="">Item</option>
+  <option value="Cinnamon Roll Waffle">Cinnamon Roll Waffle</option>
+  <option value="Buttermilk Waffle">Buttermilk Waffle</option>
+  <option value="Chocolate Chip Waffle">Chocolate Chip Waffle</option>
+  <option value="Small Beignet Stix">Small Beignet Stix</option>
+  <option value="Large Beignet Stix">Large Beignet Stix</option>
+  <option value="Chocolate Chip Burrito">Chocolate Chip Burrito</option>
+  <option value="Deluxe Chocolate Chip Burrito">Deluxe Chocolate Chip Burrito</option>
+  <option value="Strawberries and Nutella">Strawberries and Nutella</option>
+  <option value="Orange Juice">Orange Juice</option>
+  <option value="Bottled Water">Bottled Water</option>
+</select>
+</div>
+
+ <div class="field"> 
+<select id="customer_order2" name="customer[item3]" onchange="calcTotal()">
+  <option value="">Item</option>
+  <option value="Cinnamon Roll Waffle">Cinnamon Roll Waffle</option>
+  <option value="Buttermilk Waffle">Buttermilk Waffle</option>
+  <option value="Chocolate Chip Waffle">Chocolate Chip Waffle</option>
+  <option value="Small Beignet Stix">Small Beignet Stix</option>
+  <option value="Large Beignet Stix">Large Beignet Stix</option>
+  <option value="Chocolate Chip Burrito">Chocolate Chip Burrito</option>
+  <option value="Deluxe Chocolate Chip Burrito">Deluxe Chocolate Chip Burrito</option>
+  <option value="Strawberries and Nutella">Strawberries and Nutella</option>
+  <option value="Orange Juice">Orange Juice</option>
+  <option value="Bottled Water">Bottled Water</option>
+</select>
+</div>
+
+ <div class="field">
+<select id="customer_topping3" name="customer[item4]" onchange="calcTotal()">
+  <option value="">Item</option>
+  <option value="Cinnamon Roll Waffle">Cinnamon Roll Waffle</option>
+  <option value="Buttermilk Waffle">Buttermilk Waffle</option>
+  <option value="Chocolate Chip Waffle">Chocolate Chip Waffle</option>
+  <option value="Small Beignet Stix">Small Beignet Stix</option>
+  <option value="Large Beignet Stix">Large Beignet Stix</option>
+  <option value="Chocolate Chip Burrito">Chocolate Chip Burrito</option>
+  <option value="Deluxe Chocolate Chip Burrito">Deluxe Chocolate Chip Burrito</option>
+  <option value="Strawberries and Nutella">Strawberries and Nutella</option>
+  <option value="Orange Juice">Orange Juice</option>
+  <option value="Bottled Water">Bottled Water</option>
+</select>
+</div>
+
+  
   <div class="field">
-    <%= f.label :item2 %><br>
-    <%= f.text_field :item2 %>
+    <select id="customer_topping1" name="customer[topping1]" onchange="calcTotal()">       
+        <option value="">Topping</option>
+        <option value="Strawberries">Strawberries</option>
+        <option value="Nutella">Nutella</option>
+        <option value="Whipped Cream">Whipped Cream</option>
+        <option value="Glaze">Glaze</option>
+      </select>
   </div>
+  
   <div class="field">
-    <%= f.label :item3 %><br>
-    <%= f.text_field :item3 %>
+    <select id="customer_topping2" name="customer[topping2]" onchange="calcTotal()">
+        <option value="">Topping</option>
+        <option value="Strawberries">Strawberries</option>
+        <option value="Nutella">Nutella</option>
+        <option value="Whipped Cream">Whipped Cream</option>
+        <option value="Glaze">Glaze</option>
+      </select>
   </div>
+  
   <div class="field">
-    <%= f.label :item4 %><br>
-    <%= f.text_field :item4 %>
+    <select id="customer_payment_type" name="customer[payment_type]">
+        <option value="">Payment</option>
+        <option value="Cash">Cash</option>
+        <option value="Venmo">Venmo | GCSTix</option>
+        </select>
   </div>
+  
   <div class="field">
-    <%= f.label :topping1 %><br>
-    <%= f.text_field :topping1 %>
+  <input type="text" id="price1" name="customer[total]" value="" readonly style="height=1px;visibility: hidden;">
   </div>
-  <div class="field">
-    <%= f.label :topping2 %><br>
-    <%= f.text_field :topping2 %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_type %><br>
-    <%= f.text_field :payment_type %>
-  </div>
-  <div class="field">
-    <%= f.label :room_number %><br>
-    <%= f.text_field :room_number %>
-  </div>
-  <div class="field">
-    <%= f.label :total %><br>
-    <%= f.text_field :total %>
-  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Place Order"%>
   </div>
-<% end %>
+  <% end %>
+<!-- <%= link_to 'Back', customers_path %> -->
+</div>
+    <footer>
+    <p style="text-align:center;">
+       <a href="/"><%= image_tag("snapcode.png", size: "120x120", alt: "SnapChat") %></a>
+       <a href="https://www.facebook.com/gcwafflesticks/"><%= image_tag("Facebook.png", size: "120x120", alt: "Facebook") %></a>
+       <a href="tel:+12257161681"><%= image_tag("phone.png", size: "120x120", alt: "Phone") %></a>
+       <a href="mailto:gcwafflestix@gmail.com?Subject=Contact STIX"><%= image_tag("eMail.png", size: "120x120", alt: "eMail") %></a></p>
+    </footer>
+</div>
+</body>
+
